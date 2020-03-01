@@ -1,0 +1,49 @@
+<html>
+
+<head>
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/7.9.2/firebase-firestore.js"></script>
+</head>
+
+<body>
+  <h1>REAL-TIME CALCULATOR</h1>
+
+  <div class="content">
+    <form id="add-calc-form">
+      <input type="number" step="any" name="n1" placeholder="First Number" required/>
+      <select name="oper" id="operators">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+      <input type="number" step="any" name="n2" placeholder="Second Number" required/>
+      <button>=</button>
+    </form>
+
+    <ul id="calc-list"></ul>
+  </div>
+
+  <script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyDAXARMd4Y1tokGNzACPPtJDxJQJ-PJXcw",
+      authDomain: "sezzle-calc-e2199.firebaseapp.com",
+      databaseURL: "https://sezzle-calc-e2199.firebaseio.com",
+      projectId: "sezzle-calc-e2199",
+      storageBucket: "sezzle-calc-e2199.appspot.com",
+      messagingSenderId: "818279608303",
+      appId: "1:818279608303:web:a6d9c389fc200d8636901a",
+      measurementId: "G-1EFWRL3LB3"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.firestore();
+    db.settings({ timestampsInSnapshots: true });
+  </script>
+
+  <script src="app.js"></script>
+</body>
+
+</html>
